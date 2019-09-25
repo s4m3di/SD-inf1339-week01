@@ -20,9 +20,19 @@
         document.getElementById("binary_output").innerHTML=bcd
     }
     function dec2bin(decimal) {
-        //for stub just return '0000'
-        return ('0000')
-    }
+        //second refinement using flow
+        var x = decimal
+        var output = ''
+        while (x!==0) {
+            remainder = x % 2
+            if (remainder == 1)
+                {output = '1' + output}
+            else
+                {output = '0' + output}
+            x = Math.floor(x/2)
+        }
+    while (output.length < 4) {output = '0' + output}    
+    return(output)}
 </script>
 <title>Version 6 - Decimal to Binary A9</title>
 </head>
